@@ -2,7 +2,11 @@ import axios from 'axios';
 import { User, Post, Comment, Message, Liker, ReactionType, NotificationItem, FriendRequest, FriendUser, Conversation, AccountSettingsData, UserEmailItem } from './types';
 
 // Base Axios instance pointing to .NET backend
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5116/api';
+const API_URL =
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD
+    ? 'https://socialbook-1ni7.onrender.com/api'
+    : 'http://localhost:5116/api');
 const USE_MOCK = import.meta.env.VITE_USE_MOCK_API === 'true';
 
 export const apiClient = axios.create({
