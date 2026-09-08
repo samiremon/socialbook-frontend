@@ -14,7 +14,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // Default ASP.NET Core API URL
+        target: 'http://localhost:5116', // ASP.NET Core API URL
         changeOrigin: true,
         secure: false,
       },
